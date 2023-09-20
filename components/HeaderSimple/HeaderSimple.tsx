@@ -1,15 +1,14 @@
 'use client';
 import { useState } from 'react';
-import { Container, Group, Burger } from '@mantine/core';
+import { Container, Group, Burger, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantine/ds';
 import classes from './HeaderSimple.module.css';
+import { ActionToggle } from '../ActionToggle/ActionToggle';
+import { ActionIconSocials } from '../ActionIconSocial/ActionIconSocial';
 
 const links = [
   { link: '/about', label: 'Features' },
   { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
-  { link: '/community', label: 'Community' },
 ];
 
 export function HeaderSimple() {
@@ -34,12 +33,16 @@ export function HeaderSimple() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <MantineLogo size={28} />
+        <Text size="xl" fw={700} c="teal">
+          Jared Kirby
+        </Text>
+        <ActionIconSocials />
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <ActionToggle />
       </Container>
     </header>
   );

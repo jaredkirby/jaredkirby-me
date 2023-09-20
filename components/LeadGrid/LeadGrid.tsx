@@ -1,24 +1,35 @@
 'use client';
-import { Container, Grid, SimpleGrid, Skeleton, rem } from '@mantine/core';
 
-const PRIMARY_COL_HEIGHT = rem(800);
+import { Container, Grid, SimpleGrid, Image, Stack, Center, Text, Space } from '@mantine/core';
+import { IntroText } from '../IntroText/IntroText';
+import { ToolsList } from '../ToolsList/ToolsList';
 
 export function LeadGrid() {
-  const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
-
   return (
     <Container my="md">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-        <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+        <Stack>
+          <Center>
+            <Image
+              radius="md"
+              h={220}
+              w={220}
+              fit="contain"
+              src="/ai_jared_1000.png"
+              alt="Jared Kirby"
+            />
+          </Center>
+          <IntroText />
+        </Stack>
         <Grid gutter="md">
           <Grid.Col>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+            <Center>
+              <Text size="xl" fw={700}>
+                Projects
+              </Text>
+            </Center>
+            <Space h="lg" />
+            <ToolsList />
           </Grid.Col>
         </Grid>
       </SimpleGrid>
