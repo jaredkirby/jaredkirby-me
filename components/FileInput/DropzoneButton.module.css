@@ -1,0 +1,12 @@
+.wrapper {
+    margin-bottom: rem(10px);
+  }
+  
+  .dropzone {
+    border-width: rem(1px);
+    padding-bottom: rem(10px);
+  }
+  
+  .icon {
+    color: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-3));
+  }

@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
 import React from 'react';
-import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { MantineProvider, ColorSchemeScript, Space } from '@mantine/core';
 import { theme } from '../theme';
 import { HeaderSimple } from '../components/HeaderSimple/HeaderSimple';
 
@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <HeaderSimple /> {children}
+          <HeaderSimple />
+          {children}
+          <Space h="xl" />
         </MantineProvider>
       </body>
     </html>
