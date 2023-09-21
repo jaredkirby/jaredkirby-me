@@ -1,27 +1,16 @@
 'use client';
 
-import {
-  Container,
-  Grid,
-  SimpleGrid,
-  Image,
-  Stack,
-  Center,
-  Text,
-  Space,
-  Box,
-  Card,
-  Group,
-} from '@mantine/core';
+import { Container, SimpleGrid, Image, Stack, Text, Card, Space } from '@mantine/core';
 import { IntroText } from '../IntroText/IntroText';
 
 export function JaredGrid() {
   return (
     <Container my="md">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-        <Card shadow="md" padding="xl" radius="lg" withBorder>
+        <Card shadow="md" padding="xl" radius="md" withBorder>
           <Stack align="center">
-            <Image h={220} w={220} fit="contain" src="/ai_jared_1000.png" alt="Jared Kirby" />
+            <Space h={10} />
+            <Image h={220} w={220} src="/ai_jared_1000.png" alt="Jared Kirby" />
             <Text size="xl" fw={700}>
               Hi, I'm Jared! 😄
             </Text>
@@ -30,7 +19,7 @@ export function JaredGrid() {
             </Text>
           </Stack>
         </Card>
-        <Card shadow="md" padding="xl" radius="lg" withBorder>
+        <Card shadow="md" padding="xl" radius="md" withBorder>
           <IntroText />
         </Card>
       </SimpleGrid>

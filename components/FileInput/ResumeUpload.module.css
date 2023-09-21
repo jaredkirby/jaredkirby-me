@@ -1,0 +1,12 @@
+  .dropzone {
+    border-width: rem(1px);
+    padding-bottom: rem(10px);
+  }
+
+  .card {
+    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-4));
+  }
+  
+  .icon {
+    color: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-4));
+  }

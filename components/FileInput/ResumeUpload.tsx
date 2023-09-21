@@ -2,14 +2,14 @@ import { useRef } from 'react';
 import { Text, Group, Button, rem, useMantineTheme, Center, Card } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons-react';
-import classes from './DropzoneButton.module.css';
+import classes from './ResumeUpload.module.css';
 
 export function ResumeUpload() {
   const theme = useMantineTheme();
   const openRef = useRef<() => void>(null);
 
   return (
-    <div className={classes.wrapper}>
+    <div>
       <Card shadow="none">
         <Dropzone
           openRef={openRef}
@@ -40,23 +40,25 @@ export function ResumeUpload() {
               </Dropzone.Idle>
             </Group>
 
-            <Text ta="center" fw={700} fz="lg" mt="xs">
+            <Text ta="center" fw={400} fz="lg">
               <Dropzone.Accept>Drop files here</Dropzone.Accept>
               <Dropzone.Reject>Pdf file less than 30mb</Dropzone.Reject>
               <Dropzone.Idle>Upload Resume</Dropzone.Idle>
             </Text>
             <Text ta="center" fz="sm" c="dimmed">
-              Drag&apos;n&apos;drop files here to upload.
-              <br />
-              We can accept only <i>.pdf</i> files that are less than 30mb in size.
+              Drag&apos;n&apos;drop <i>.pdf</i> files here or click to upload.
             </Text>
           </div>
         </Dropzone>
-        <Center>
-          <Button variant="light" color="teal" radius="md" onClick={() => openRef.current?.()}>
-            Select Resume
-          </Button>
-        </Center>
+        <Button
+          variant="filled"
+          color="rgba(59, 168, 94, 0.5)"
+          radius="md"
+          size="xs"
+          onClick={() => openRef.current?.()}
+        >
+          Select Resume
+        </Button>
       </Card>
     </div>
   );
