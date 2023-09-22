@@ -5,7 +5,7 @@ import { IconInfoCircle } from '@tabler/icons-react';
 import { ResumeUpload } from '../FileInput/ResumeUpload';
 import classes from './JobToolCard.module.css';
 
-function JobDescription() {
+function DocUpload() {
   const rightSection = (
     <Tooltip
       label="This tool will analyze the job description for keywords and phrases."
@@ -30,32 +30,31 @@ function JobDescription() {
   );
 }
 
-export function JobToolCard() {
+export function DocQACard() {
   return (
     <Card shadow="md" padding="md" radius="lg" withBorder>
       <Card.Section>
-        <Image src="/JobPilotHero.png" height={125} alt="JobPilot" />
+        <Image src="/DocPilotHero.png" height={125} alt="DocPilot" />
       </Card.Section>
 
       <Text pt="md" fz="xl" fw={700}>
-        JobPilot
+        DocPilot
       </Text>
       <Text size="md" c="dimmed" pb="md">
-        This tool is a job resume builder that writes your resume for you. It uses AI to analyze
-        your resume and job description, then writes your resume for you.
+        This tool enables you to upload a document and ask a question about it. It will extract the text from your document, create question answer pairs based on the text, then embed those pairs into a vector space. You can then ask a question and the model will semantically search the vector to return the most relevant answer.
       </Text>
       <Card shadow="sm" withBorder={false} className={classes.card}>
         <Text size="md" fw={500}>
           Try it out!
         </Text>
         <Text size="sm" c="dimmed">
-          Upload your resume and job description to get started.
+          Upload your Document and ask a question to get started.
         </Text>
         <Stack pt="lg">
           <ResumeUpload />
-          <JobDescription />
+          <DocUpload />
           <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
-            Rewrite Resume
+            Answer Question
           </Button>
         </Stack>
       </Card>
