@@ -2,10 +2,10 @@
 
 import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Divider } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
-import { ResumeUpload } from '../FileInput/ResumeUpload';
+import { DocUpload } from '../FileInput/DocUpload';
 import classes from './JobToolCard.module.css';
 
-function DocUpload() {
+function DocQ() {
   const rightSection = (
     <Tooltip
       label="This tool will analyze the job description for keywords and phrases."
@@ -37,11 +37,13 @@ export function DocQACard() {
         <Image src="/DocPilotHero.png" height={125} alt="DocPilot" />
       </Card.Section>
 
-      <Text pt="md" fz="xl" fw={700}>
+      <Text pt="md" pb="sm" fz="xl" fw={700}>
         DocPilot
       </Text>
       <Text size="md" c="dimmed" pb="md">
-        This tool enables you to upload a document and ask a question about it. It will extract the text from your document, create question answer pairs based on the text, then embed those pairs into a vector space. You can then ask a question and the model will semantically search the vector to return the most relevant answer.
+        Upload any document and pose a question; the system intelligently extracts text, crafts Q&A
+        pairs, and leverages semantic search algorithms to deliver the most relevant answer to your
+        query.
       </Text>
       <Card shadow="sm" withBorder={false} className={classes.card}>
         <Text size="md" fw={500}>
@@ -51,8 +53,8 @@ export function DocQACard() {
           Upload your Document and ask a question to get started.
         </Text>
         <Stack pt="lg">
-          <ResumeUpload />
           <DocUpload />
+          <DocQ />
           <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
             Answer Question
           </Button>
