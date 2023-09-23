@@ -1,7 +1,8 @@
-import { Center, Text } from '@mantine/core';
+import { Center, Text, Container, Card } from '@mantine/core';
 
 import { JaredGrid } from '@/components/PageGrids/JaredGrid';
 import { ProjectGrid } from '@/components/PageGrids/ProjectGrid';
+import { DemoAppGrid } from '@/components/PageGrids/DemoAppGrid';
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         </Text>
       </Center>
       <ProjectGrid />
+      <DemoAppGrid />
     </>
   );
 }
