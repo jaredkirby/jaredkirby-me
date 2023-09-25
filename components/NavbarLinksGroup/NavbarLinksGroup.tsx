@@ -1,5 +1,4 @@
 import React from 'react';
-import { IconType } from '@tabler/icons-react';
 
 interface Link {
   label: string;
@@ -8,24 +7,25 @@ interface Link {
 
 interface LinksGroupProps {
   label: string;
-  icon: IconType;
+  icon: React.ElementType;
   initiallyOpened?: boolean;
   links?: Link[];
 }
 
 export const LinksGroup: React.FC<LinksGroupProps> = ({ label, icon, initiallyOpened = false, links = [] }) => {
   const [isOpen, setIsOpen] = React.useState(initiallyOpened);
+  const Icon = icon;
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <div>
-      <div onClick={toggleOpen}>
-        <icon />
+      <button onClick={toggleOpen}>
+        <Icon />
         <span>{label}</span>
-      </div>
-      {isOpen && links.map((link, index) => (
-        <a key={index} href={link.link}>
+      </button>
+      {isOpen && links.map((link) => (
+        <a key={link.label} href={link.link}>
           {link.label}
         </a>
       ))}

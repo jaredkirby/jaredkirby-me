@@ -1,15 +1,7 @@
-'use client'
+'use client';
 
 import { Group, Code, ScrollArea, rem } from '@mantine/core';
-import {
-  IconNotes,
-  IconCalendarStats,
-  IconGauge,
-  IconPresentationAnalytics,
-  IconFileAnalytics,
-  IconAdjustments,
-  IconLock,
-} from '@tabler/icons-react';
+import { IconNotes, IconCalendarStats, IconGauge, IconPresentationAnalytics, IconFileAnalytics, IconAdjustments, IconLock } from '@tabler/icons-react';
 import { LinksGroup } from '../NavbarLinksGroup/NavbarLinksGroup';
 import { Logo } from './Logo';
 import classes from './AppNav.module.css';
@@ -58,7 +50,6 @@ export function AppNav() {
       <div className={classes.header}>
         <Group justify="space-between">
           <Logo style={{ width: rem(120) }} />
-          <Code fw={700}>v3.1.2</Code>
         </Group>
       </div>
 
