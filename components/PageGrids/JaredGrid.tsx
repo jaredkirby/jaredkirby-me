@@ -8,7 +8,7 @@ export function JaredGrid() {
   return (
     <Container my="md">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-        <Card shadow="md" padding="xl" radius="xl" withBorder className={classes.card}>
+        <Card shadow="md" padding="xl" radius="xl" className={classes.card}>
           <Stack align="center">
             <Space h={10} />
             <Image h={220} w={220} src="/ai_jared_1000.png" alt="Jared Kirby" />
@@ -20,7 +20,7 @@ export function JaredGrid() {
             </Text>
           </Stack>
         </Card>
-        <Card shadow="md" padding="xl" radius="xl" withBorder>
+        <Card shadow="md" padding="xl" radius="xl">
           <IntroText />
         </Card>
       </SimpleGrid>

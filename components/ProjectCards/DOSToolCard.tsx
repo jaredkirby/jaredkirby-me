@@ -31,7 +31,7 @@ function JobDescription() {
 
 export function DOSToolCard() {
   return (
-    <Card shadow="md" padding="md" radius="lg" withBorder>
+    <Card shadow="md" padding="md" radius="lg">
       <Card.Section>
         <Image src="/JobPilotHero.png" height={125} alt="RolePilot" />
       </Card.Section>

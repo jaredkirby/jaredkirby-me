@@ -32,7 +32,7 @@ function DocQ() {
 
 export function DocQACard() {
   return (
-    <Card shadow="md" padding="md" radius="lg" withBorder>
+    <Card shadow="md" padding="md" radius="lg" >
       <Card.Section>
         <Image src="/DocPilotHero.png" height={125} alt="DocPilot" />
       </Card.Section>

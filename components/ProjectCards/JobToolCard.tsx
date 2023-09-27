@@ -32,7 +32,7 @@ function JobDescription() {
 
 export function JobToolCard() {
   return (
-    <Card shadow="md" padding="md" radius="lg" withBorder>
+    <Card shadow="md" padding="md" radius="lg">
       <Card.Section>
         <Image src="/JobPilotHero.png" height={125} alt="JobPilot" />
       </Card.Section>
