@@ -10,7 +10,7 @@ function JobDescription() {
       label="This tool will analyze the job description for keywords and phrases."
       position="top-end"
       withArrow
-      transitionProps={{ transition: 'pop-bottom-right' }}
+      transitionProps={{ transition: 'rotate-left', duration: 500 }}
     >
       <Text component="div" c="dimmed" style={{ cursor: 'help' }}>
         <IconInfoCircle style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
@@ -20,6 +20,7 @@ function JobDescription() {
 
   return (
     <Textarea
+      size="md"
       radius="md"
       rightSection={rightSection}
       autosize={true}
@@ -44,13 +45,7 @@ export function DOSToolCard() {
         tool will help you define the best persona for your task.
       </Text>
       <Card shadow="sm" withBorder={false} className={classes.card}>
-        <Text size="md" fw={500}>
-          Try it out!
-        </Text>
-        <Text size="sm" c="dimmed">
-          Enter your task to get started.
-        </Text>
-        <Stack pt="lg">
+        <Stack>
           <JobDescription />
           <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
             Generate Resume

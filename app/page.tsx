@@ -14,7 +14,6 @@ export default function HomePage() {
         </Text>
       </Center>
       <ProjectGrid />
-      <DemoAppGrid />
     </>
   );
 }

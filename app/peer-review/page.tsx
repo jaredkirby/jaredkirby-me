@@ -1,13 +1,12 @@
-import {  MantineProvider, createTheme, Center, Text, Container, Card } from '@mantine/core';
+'use client';
+import { Grid, Center } from '@mantine/core';
 
-import { Cool_PeerReviewInput } from '@/components/Input/CoolTextArea';
+import { DOSToolCard } from '@/components/ProjectCards/DOSToolCard';
 
 export default function PeerReviewApp() {
   return (
-    <>
-    <Container fluid h={500} bg="var(--mantine-color-blue-light)">
-        <Cool_PeerReviewInput />
-    </Container>
-    </>
+      <Center>
+        <DOSToolCard />
+      </Center>
   );
 }
