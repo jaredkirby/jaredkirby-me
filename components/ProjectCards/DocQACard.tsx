@@ -1,9 +1,8 @@
 'use client';
 
-import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Divider } from '@mantine/core';
+import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Container } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { DocUpload } from '../FileInput/DocUpload';
-import classes from './JobToolCard.module.css';
 
 function DocQ() {
   const rightSection = (
@@ -32,26 +31,24 @@ function DocQ() {
 
 export function DocQACard() {
   return (
-    <Card shadow="md" padding="md" radius="lg" >
-      <Card.Section>
-        <Image src="/DocPilotHero.png" height={125} alt="DocPilot" />
-      </Card.Section>
-
-      <Text pt="md" pb="sm" fz="xl" fw={700}>
-        DocPilot
+    <Container p="sm">
+      <Text pb="sm" fz="lg" fw={500}>
+        Upload a document and ask a question
       </Text>
       <Text size="md" c="dimmed" pb="md">
         Upload any document and pose a question; the system intelligently extracts text, crafts Q&A
         pairs, and leverages semantic search algorithms to deliver the most relevant answer to your
         query.
       </Text>
-      <Card shadow="sm" withBorder={false} className={classes.card}>
-        <Text size="md" fw={500}>
-          Try it out!
-        </Text>
-        <Text size="sm" c="dimmed">
-          Upload your Document and ask a question to get started.
-        </Text>
+
+      <Text size="md" fw={500}>
+        Try it out!
+      </Text>
+      <Text size="sm" c="dimmed">
+        Upload your Document and ask a question to get started.
+      </Text>
+
+      <Card shadow="sm" withBorder={false}>
         <Stack pt="lg">
           <DocUpload />
           <DocQ />
@@ -60,6 +57,6 @@ export function DocQACard() {
           </Button>
         </Stack>
       </Card>
-    </Card>
+    </Container>
   );
 }

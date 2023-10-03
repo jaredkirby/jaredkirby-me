@@ -1,8 +1,7 @@
 'use client';
 
-import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Divider } from '@mantine/core';
+import { Card, Text, Button, Textarea, Stack, Tooltip, rem, Container } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
-import classes from './JobToolCard.module.css';
 
 function JobDescription() {
   const rightSection = (
@@ -32,19 +31,15 @@ function JobDescription() {
 
 export function DOSToolCard() {
   return (
-    <Card shadow="md" padding="md" radius="lg">
-      <Card.Section>
-        <Image src="/JobPilotHero.png" height={125} alt="RolePilot" />
-      </Card.Section>
-
-      <Text pt="md" pb="xs" fz="xl" fw={700}>
-        RolePilot
+    <Container p="sm">
+      <Text pb="xs" fz="lg" fw={500}>
+        Give ChatGPT a persona
       </Text>
       <Text size="md" c="dimmed" pb="md">
         Tools like ChatGPT can benefit from a well defined persona specific to desired outcome. This
         tool will help you define the best persona for your task.
       </Text>
-      <Card shadow="sm" withBorder={false} className={classes.card}>
+      <Card shadow="sm" withBorder={false}>
         <Stack>
           <JobDescription />
           <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
@@ -52,6 +47,6 @@ export function DOSToolCard() {
           </Button>
         </Stack>
       </Card>
-    </Card>
+    </Container>
   );
 }

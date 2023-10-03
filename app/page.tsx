@@ -2,7 +2,7 @@ import { Center, Text, Container, Card } from '@mantine/core';
 
 import { JaredGrid } from '@/components/PageGrids/JaredGrid';
 import { ProjectGrid } from '@/components/PageGrids/ProjectGrid';
-import { DemoAppGrid } from '@/components/PageGrids/DemoAppGrid';
+import { MainProjectCard } from '@/components/MainProjectCard/MainProjectCard';
 
 export default function HomePage() {
   return (
@@ -13,7 +13,7 @@ export default function HomePage() {
           Projects
         </Text>
       </Center>
-      <ProjectGrid />
+      <MainProjectCard />
     </>
   );
 }

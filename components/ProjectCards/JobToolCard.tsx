@@ -1,6 +1,18 @@
 'use client';
 
-import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Divider } from '@mantine/core';
+import {
+  Card,
+  Image,
+  Text,
+  Button,
+  Textarea,
+  Stack,
+  Tooltip,
+  rem,
+  Divider,
+  Container,
+  Grid,
+} from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { ResumeUpload } from '../FileInput/ResumeUpload';
 import classes from './JobToolCard.module.css';
@@ -32,26 +44,24 @@ function JobDescription() {
 
 export function JobToolCard() {
   return (
-    <Card shadow="md" padding="md" radius="lg">
-      <Card.Section>
-        <Image src="/JobPilotHero.png" height={125} alt="JobPilot" />
-      </Card.Section>
-
-      <Text pt="md" pb="xs" fz="xl" fw={700}>
-        JobPilot
+    <Container p="sm">
+      <Text pb="xs" fz="lg" fw={500}>
+        Write a resume that gets you hired
       </Text>
       <Text size="md" c="dimmed" pb="md">
         Upload your resume and the job description you're targeting; this tool conducts a nuanced
         analysis of both. It then crafts an optimized, job-targeted resume, designed to increase
         your chances of landing the job.
       </Text>
-      <Card shadow="sm" withBorder={false} className={classes.card}>
-        <Text size="md" fw={500}>
-          Try it out!
-        </Text>
-        <Text size="sm" c="dimmed">
-          Upload your resume and job description to get started.
-        </Text>
+
+      <Text size="md" fw={500}>
+        Try it out!
+      </Text>
+      <Text size="sm" c="dimmed">
+        Upload your resume and job description to get started.
+      </Text>
+
+      <Card shadow="sm" radius="md" withBorder={false}>
         <Stack pt="lg">
           <ResumeUpload />
           <JobDescription />
@@ -60,6 +70,6 @@ export function JobToolCard() {
           </Button>
         </Stack>
       </Card>
-    </Card>
+    </Container>
   );
 }
