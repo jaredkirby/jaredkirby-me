@@ -1,4 +1,6 @@
 import '@mantine/core/styles.css';
+import '@mantine/dropzone/styles.css';
+
 import React from 'react';
 import { MantineProvider, ColorSchemeScript, Space } from '@mantine/core';
 import { theme } from '../theme';
