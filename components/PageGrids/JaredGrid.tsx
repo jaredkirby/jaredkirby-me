@@ -20,7 +20,7 @@ export function JaredGrid() {
             </Text>
           </Stack>
         </Card>
-        <Card shadow="md" padding="xl" radius="xl">
+        <Card shadow="md" padding="xl" radius="xl" className={classes.card}>
           <IntroText />
         </Card>
       </SimpleGrid>

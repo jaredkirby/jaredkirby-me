@@ -1,6 +1,13 @@
 import { Text, Center, Space } from '@mantine/core';
 
 export function IntroText() {
+  const yellowColor = '#E7E792';
+  const redColor = '#B5716E';
+  const greenColor = '#A4DA95';
+  const blueColor = '#9ACFE5';
+  const purpleColor = '#8677D3';
+  const pinkColor = '#C266AF';
+
   return (
     <>
       <Center>
@@ -11,22 +18,22 @@ export function IntroText() {
       <Space h="lg" />
       <Text size="md">
         <strong>Role:</strong> I'm the{' '}
-        <span style={{ fontWeight: 500, color: '#ffd166' }}>Director of Data Services</span> at a
+        <span style={{ fontWeight: 500, color: yellowColor }}>Director of Data Services</span> at a
         California-based agency, managing everything from data analytics to client strategy.
       </Text>
       <Space h="sm" />
       <Text size="md">
         <strong>Skills:</strong> Expert in programming, machine learning, and audio engineering.
         Passionate about{' '}
-        <span style={{ fontWeight: 500, color: '#ef476f' }}>learning new things </span> and
+        <span style={{ fontWeight: 500, color: pinkColor }}>learning new things </span> and
         building. 👉
       </Text>
       <Space h="sm" />
       <Text size="md">
         <strong>Interests:</strong> Focused on{' '}
-        <span style={{ fontWeight: 500, color: '#fb5607' }}>Generative AI</span>,{' '}
-        <span style={{ fontWeight: 500, color: '#3a86ff' }}>Machine Learning</span>, and{' '}
-        <span style={{ fontWeight: 500, color: '#8338ec' }}>Language Models</span>.
+        <span style={{ fontWeight: 500, color: redColor }}>Generative AI</span>,{' '}
+        <span style={{ fontWeight: 500, color: greenColor }}>Machine Learning</span>, and{' '}
+        <span style={{ fontWeight: 500, color: purpleColor }}>Language Models</span>.
       </Text>
       <Space h="sm" />
       <Text size="md">
@@ -36,9 +43,10 @@ export function IntroText() {
       <Space h="lg" />
       <Center>
         <Text size="md">
-          <span style={{ fontWeight: 500, color: '#ffd166' }}>Let's Connect! </span>👋
+          <span style={{ fontWeight: 500, color: blueColor }}>Let's Connect! </span>👋
         </Text>
       </Center>
     </>
   );
 }
+
