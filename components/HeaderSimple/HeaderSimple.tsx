@@ -1,25 +1,23 @@
 'use client';
 
-import { Container, Group, Text } from '@mantine/core';
+import { Container, Flex, Space } from '@mantine/core';
 import classes from './HeaderSimple.module.css';
 import { ActionToggle } from '../ActionToggle/ColorModeToggle';
-import { ActionIconSocials } from '../ActionIconSocial/ActionIconSocial';
-
-import { IconPhoto, IconPrinter, IconCameraSelfie } from '@tabler/icons-react';
+import { ActionIconSocial } from '../ActionIconSocial/ActionIconSocial';
 
 
 export function HeaderSimple() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <Text size="xl" fw={700} c="teal">
-          Jared Kirby
-        </Text>
-
-        <Group>
-          <ActionIconSocials />
+        <Flex align="center" justify="flex-start" gap="md">
+          <Space w="sm" />
+          <ActionIconSocial />
+        </Flex>
+        <Flex align="center" justify="flex-end" gap="md">
           <ActionToggle />
-        </Group>
+          <Space w="sm" />
+        </Flex>
       </Container>
     </header>
   );

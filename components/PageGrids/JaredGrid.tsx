@@ -15,8 +15,8 @@ export function JaredGrid() {
             <Text size="xl" fw={700}>
               Hi, I'm Jared! 😄
             </Text>
-            <Text size="md" fw={500}>
-              Father, Husband, Data Nerd, and AI Enthusiast
+            <Text mt={-10} size="md" fw={500}>
+              Husband, Dad, Data Nerd, and AI Enthusiast
             </Text>
           </Stack>
         </Card>
