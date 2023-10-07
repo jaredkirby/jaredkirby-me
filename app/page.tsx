@@ -8,13 +8,6 @@ export default function HomePage() {
   return (
     <>
       <JaredGrid />
-      <Space h="lg" />
-      <Center>
-        <Text size="xl" fw={700}>
-          Projects
-        </Text>
-      </Center>
-      <MainProjectCard />
     </>
   );
 }

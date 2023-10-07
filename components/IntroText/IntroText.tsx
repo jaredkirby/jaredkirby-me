@@ -18,35 +18,34 @@ export function IntroText() {
       <Space h="lg" />
       <Text size="md">
         <strong>Role:</strong> I'm the{' '}
-        <span style={{ fontWeight: 500, color: yellowColor }}>Director of Data Services</span> at a
-        California-based agency, managing everything from data analytics to client strategy.
+        <span style={{ fontWeight: 700, color: yellowColor }}>Director of Innovation</span> at a
+        California-based media and marketing agency, developing the future for CPG brands.
       </Text>
       <Space h="sm" />
       <Text size="md">
-        <strong>Skills:</strong> Expert in programming, machine learning, and audio engineering.
+        <strong>Skills:</strong> Programming, data analytics, business operations, and marketing strategy.
         Passionate about{' '}
-        <span style={{ fontWeight: 500, color: pinkColor }}>learning new things </span> and
-        building. 👉
+        <span style={{ fontWeight: 700, color: pinkColor }}>learning new things </span> and
+        <span style={{ fontWeight: 700, color: purpleColor }}> building</span>.
       </Text>
       <Space h="sm" />
       <Text size="md">
         <strong>Interests:</strong> Focused on{' '}
-        <span style={{ fontWeight: 500, color: redColor }}>Generative AI</span>,{' '}
-        <span style={{ fontWeight: 500, color: greenColor }}>Machine Learning</span>, and{' '}
-        <span style={{ fontWeight: 500, color: purpleColor }}>Language Models</span>.
+        <span style={{ fontWeight: 700, color: redColor }}>AI Engineering</span>,{' '}
+        <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span>, and{' '}
+        <span style={{ fontWeight: 700, color: purpleColor }}>Retrieval Augmented Generation</span>.
       </Text>
       <Space h="sm" />
       <Text size="md">
-        <strong>Hobbies:</strong> Off-duty, I'm restoring my '78 Fiat, playing music, or enjoying
+        <strong>Hobbies:</strong> Off-duty, I'm restoring my '78 Fiat, building Lego with my boys, or enjoying
         sports like F1 and baseball.
       </Text>
       <Space h="lg" />
       <Center>
         <Text size="md">
-          <span style={{ fontWeight: 500, color: blueColor }}>Let's Connect! </span>👋
+          <span style={{ fontWeight: 700, color: blueColor }}>Let's Connect! </span>👋
         </Text>
       </Center>
     </>
   );
 }
-
