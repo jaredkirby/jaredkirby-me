@@ -4,7 +4,7 @@ import '@mantine/dropzone/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript, Space } from '@mantine/core';
 import { theme } from '../theme';
-import { HeaderSimple } from '../components/HeaderSimple/HeaderSimple';
+import { HeaderSimple } from '../components/HomePage/Header/HeaderSimple';
 
 export const metadata = {
   title: 'Jared Kirby Portfolio Website',

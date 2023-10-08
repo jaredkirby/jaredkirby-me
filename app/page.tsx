@@ -1,8 +1,8 @@
 import { Center, Text, Space } from '@mantine/core';
 
-import { JaredGrid } from '@/components/PageGrids/JaredGrid';
-import { ProjectGrid } from '@/components/PageGrids/ProjectGrid';
-import { MainProjectCard } from '@/components/MainProjectCard/MainProjectCard';
+import { JaredGrid } from '@/components/HomePage/PageGrids/JaredGrid';
+import { ProjectGrid } from '@/components/HomePage/PageGrids/ProjectGrid';
+import { MainProjectCard } from '@/components/AppProjects/MainProjectCard';
 
 export default function HomePage() {
   return (

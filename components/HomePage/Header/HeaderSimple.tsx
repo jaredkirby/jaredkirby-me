@@ -2,7 +2,7 @@
 
 import { Container, Flex, Space } from '@mantine/core';
 import classes from './HeaderSimple.module.css';
-import { ActionToggle } from '../ActionToggle/ColorModeToggle';
+import { ActionToggle } from '../ColorToggle/ColorModeToggle';
 import { ActionIconSocial } from '../ActionIconSocial/ActionIconSocial';
 
 

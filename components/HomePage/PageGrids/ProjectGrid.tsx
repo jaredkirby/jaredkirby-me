@@ -1,9 +1,9 @@
 'use client';
 
 import { Container, SimpleGrid } from '@mantine/core';
-import { JobToolCard } from '../ProjectCards/JobToolCard';
-import { DocQACard } from '../ProjectCards/DocQACard';
-import { DOSToolCard } from '../ProjectCards/DOSToolCard';
+import { JobToolCard } from '../../AppProjects/ResumePilot/JobToolCard';
+import { DocQACard } from '../../AppProjects/pdfPilot/DocQACard';
+import { DOSToolCard } from '../../AppProjects/RolePilot/DOSToolCard';
 
 export function ProjectGrid() {
   return (

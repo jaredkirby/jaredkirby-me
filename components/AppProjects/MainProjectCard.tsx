@@ -13,9 +13,9 @@ import {
   Divider,
   Container,
 } from '@mantine/core';
-import { DocQACard } from '../ProjectCards/DocQACard';
-import { DOSToolCard } from '../ProjectCards/DOSToolCard';
-import { JobToolCard } from '../ProjectCards/JobToolCard';
+import { DocQACard } from './pdfPilot/DocQACard';
+import { DOSToolCard } from './RolePilot/DOSToolCard';
+import { JobToolCard } from './ResumePilot/JobToolCard';
 import { IconBriefcase, IconFileSearch, IconUserCheck } from '@tabler/icons-react';
 
 export function MainProjectCard() {

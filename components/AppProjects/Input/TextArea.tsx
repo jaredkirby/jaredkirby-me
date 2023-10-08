@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, Image, Text, Button, Textarea, Stack, Tooltip, rem, Divider } from '@mantine/core';
+import { Text, Textarea, Tooltip, rem } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import classes from './JobToolCard.module.css';
 
