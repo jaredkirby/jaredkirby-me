@@ -12,10 +12,11 @@ import {
   Divider,
   Container,
   Grid,
+  Center,
+  Space
 } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { ResumeUpload } from '../FileInput/ResumeUpload';
-import classes from './JobToolCard.module.css';
 
 function JobDescription() {
   const rightSection = (
@@ -36,8 +37,10 @@ function JobDescription() {
       radius="md"
       rightSection={rightSection}
       autosize={true}
+      minRows={4}
       label="Job Description"
-      placeholder={`AI Engineer\nJob Description: We are looking for a AI Engineer to join our team. You will be responsible for building and training AI models.`}
+      miw={400}
+      placeholder={`Job Title: AI Engineer\nJob Description: We are looking for a AI Engineer to join our team. You will be responsible for building and deploying AI applications that utilize foundation or local models via API.`}
     />
   );
 }
@@ -45,7 +48,7 @@ function JobDescription() {
 export function JobToolCard() {
   return (
     <Container p="sm">
-      <Text pb="xs" fz="lg" fw={500}>
+      <Text fz="xl" fw={500}>
         Write a resume that gets you hired
       </Text>
       <Text size="md" c="dimmed" pb="md">
@@ -60,16 +63,18 @@ export function JobToolCard() {
       <Text size="sm" c="dimmed">
         Upload your resume and job description to get started.
       </Text>
-
-      <Card shadow="sm" radius="md" withBorder={false}>
-        <Stack pt="lg">
-          <ResumeUpload />
-          <JobDescription />
-          <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
-            Generate Resume
-          </Button>
-        </Stack>
-      </Card>
+      <Space h="md" />
+      <Center>
+        <Card shadow="sm" radius="md" padding="lg" withBorder={false}>
+          <Stack align='center'>
+            <ResumeUpload />
+            <JobDescription />
+            <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
+              Generate Resume
+            </Button>
+          </Stack>
+        </Card>
+      </Center>
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Text, Group, Button, rem, useMantineTheme, Center, Card } from '@mantine/core';
+import { Text, Group, Button, rem, useMantineTheme, Center, Card, Stack } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons-react';
 import classes from './ResumeUpload.module.css';
@@ -10,7 +10,7 @@ export function ResumeUpload() {
 
   return (
     <div>
-      <Card shadow="none">
+        <Stack align='center' gap="xs">
         <Dropzone
           openRef={openRef}
           onDrop={() => {}}
@@ -18,9 +18,10 @@ export function ResumeUpload() {
           radius="md"
           accept={[MIME_TYPES.pdf]}
           maxSize={30 * 1024 ** 2}
+          maw={300}
         >
           <div style={{ pointerEvents: 'none' }}>
-            <Group justify="center">
+            <Group justify="center" >
               <Dropzone.Accept>
                 <IconDownload
                   style={{ width: rem(30), height: rem(30) }}
@@ -54,12 +55,12 @@ export function ResumeUpload() {
           variant="filled"
           color="rgba(59, 168, 94, 0.5)"
           radius="md"
-          size="xs"
+          
           onClick={() => openRef.current?.()}
         >
           Select Resume
         </Button>
-      </Card>
+        </Stack>
     </div>
   );
 }
