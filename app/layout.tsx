@@ -2,9 +2,10 @@ import '@mantine/core/styles.css';
 import '@mantine/dropzone/styles.css';
 
 import React from 'react';
-import { MantineProvider, ColorSchemeScript, Space } from '@mantine/core';
+import { MantineProvider, ColorSchemeScript, Space, Flex } from '@mantine/core';
 import { theme } from '../theme';
 import { HeaderSimple } from '../components/HomePage/Header/HeaderSimple';
+import { Footer } from '@/components/HomePage/Footer/Footer';
 
 export const metadata = {
   title: 'Jared Kirby Portfolio Website',
@@ -24,9 +25,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <HeaderSimple />
           {children}
-          <Space h="xl" />
+          <Footer />
         </MantineProvider>
       </body>
     </html>

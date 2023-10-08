@@ -11,12 +11,10 @@ export function HeaderSimple() {
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
         <Flex align="center" justify="flex-start" gap="md">
-          <Space w="sm" />
-          <ActionIconSocial />
         </Flex>
         <Flex align="center" justify="flex-end" gap="md">
           <ActionToggle />
-          <Space w="sm" />
+          <Space w="md" />
         </Flex>
       </Container>
     </header>

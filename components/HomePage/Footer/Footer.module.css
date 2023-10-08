@@ -1,11 +1,11 @@
-.header {
+.footer {
     height: rem(56px);
-    margin-bottom: rem(25px);
+    margin-bottom: rem(50px);
     background-color: var(--mantine-color-body);
   }
   
   .inner {
-    height: rem(65px);
+    height: rem(56px);
     display: flex;
     justify-content: space-between;
     align-items: center;

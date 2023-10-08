@@ -1,10 +1,11 @@
 'use client';
+
 import cx from 'clsx';
 import { ActionIcon, useMantineColorScheme, useComputedColorScheme, Group } from '@mantine/core';
 import { IconSun, IconMoon } from '@tabler/icons-react';
 import classes from './ColorModeToggle.module.css';
 
-export function ActionToggle() {
+export function ColorMode() {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
