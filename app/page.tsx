@@ -1,5 +1,4 @@
-import { Center, Text, Space, Container, Flex } from '@mantine/core';
-
+import { Text, Space, Container } from '@mantine/core';
 import { JaredGrid } from '@/components/HomePage/PageGrids/JaredGrid';
 import { MainProjectCard } from '@/components/AppProjects/MainProjectCard';
 
@@ -8,8 +7,8 @@ export default function HomePage() {
     <Container size="xl">
       <Space h="lg" />
       <JaredGrid />
-      <Space h="lg" />
-      <Text align="center" fw={900} size="xl" >
+      <Space h="md" />
+      <Text ta="center" fw={700} size="xl" >
         Projects
       </Text>
       <Space h="lg" />

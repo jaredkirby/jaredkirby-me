@@ -9,11 +9,10 @@ import {
   Stack,
   Tooltip,
   rem,
-  Divider,
   Container,
-  Grid,
   Center,
-  Space
+  Space,
+  Flex,
 } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { ResumeUpload } from '../FileInput/ResumeUpload';
@@ -39,7 +38,6 @@ function JobDescription() {
       autosize={true}
       minRows={4}
       label="Job Description"
-      miw={400}
       placeholder={`Job Title: AI Engineer\nJob Description: We are looking for a AI Engineer to join our team. You will be responsible for building and deploying AI applications that utilize foundation or local models via API.`}
     />
   );
@@ -48,7 +46,7 @@ function JobDescription() {
 export function JobToolCard() {
   return (
     <Container p="sm">
-      <Text fz="xl" fw={500}>
+      <Text fz="lg" fw={500}>
         Write a resume that gets you hired
       </Text>
       <Text size="md" c="dimmed" pb="md">
@@ -56,23 +54,25 @@ export function JobToolCard() {
         analysis of both. It then crafts an optimized, job-targeted resume, designed to increase
         your chances of landing the job.
       </Text>
-
-      <Text size="md" fw={500}>
-        Try it out!
-      </Text>
-      <Text size="sm" c="dimmed">
-        Upload your resume and job description to get started.
-      </Text>
       <Space h="md" />
       <Center>
-        <Card shadow="sm" radius="md" padding="lg" withBorder={false}>
-          <Stack align='center'>
+        <Card shadow="md" radius="lg" padding="lg" withBorder bg="--mantine-color-dark-4">
+          <Card.Section>
+            <Image src="/JobPilotHero.png" alt="JobPilot" height={110} />
+          </Card.Section>
+          <Text mt={9} size="xl" fw={700}>
+            JobPilot
+          </Text>
+          <Text size="sm" c="dimmed">
+            Upload your resume and job description to get started.
+          </Text>
+          <Space h="md" />
             <ResumeUpload />
             <JobDescription />
-            <Button variant="filled" color="rgba(59, 168, 94, 0.5)" fullWidth radius="md">
+            <Space h="md" />
+            <Button variant="filled" color="rgba(59, 168, 94, 0.5)" radius="md">
               Generate Resume
             </Button>
-          </Stack>
         </Card>
       </Center>
     </Container>

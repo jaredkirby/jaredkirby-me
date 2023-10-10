@@ -1,31 +1,22 @@
 'use client';
-
-import {
-  Card,
-  Tabs,
-  Image,
-  Text,
-  Button,
-  Textarea,
-  Stack,
-  Tooltip,
-  rem,
-  Divider,
-  Container,
-} from '@mantine/core';
+import { Card, Tabs, rem, Container } from '@mantine/core';
 import { DocQACard } from './pdfPilot/DocQACard';
 import { DOSToolCard } from './RolePilot/DOSToolCard';
 import { JobToolCard } from './ResumePilot/JobToolCard';
 import { IconBriefcase, IconFileSearch, IconUserCheck } from '@tabler/icons-react';
+import classes from './MainProjectCard.module.css';
 
 export function MainProjectCard() {
-  const iconStyle = { width: rem(12), height: rem(12) };
+  const iconStyle = { width: rem(15), height: rem(15) };
 
   return (
     <Container size="sm">
-      <Card shadow="md" padding="md" radius="lg">
+      <Card shadow="md" padding="md" radius="lg" className={classes.card}>
         <Tabs color="teal" defaultValue="JobPilot">
-          <Tabs.List>
+          <Tabs.List grow>
+            <Tabs.Tab value="RAG" leftSection={<IconBriefcase style={iconStyle} />}>
+              RAG
+            </Tabs.Tab>
             <Tabs.Tab value="JobPilot" leftSection={<IconBriefcase style={iconStyle} />}>
               JobPilot
             </Tabs.Tab>
