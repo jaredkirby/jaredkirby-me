@@ -1,3 +1,7 @@
-.text {
-    color: light var(--mantine-color-light);
-  }
+.title {
+  color: light-dark(var(--mantine-color-dark), var(--mantine-color-light));
+  font-family: 'Gabarito', sans-serif;
+  font-size: rem(23px);
+  font-weight: 900;
+  text-align: center;
+}

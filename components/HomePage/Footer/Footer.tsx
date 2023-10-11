@@ -1,16 +1,18 @@
 'use client';
 
-import { Container, Flex, Space } from '@mantine/core';
+import { Container, Center, Text } from '@mantine/core';
 import classes from './Footer.module.css';
-import { ColorMode } from '../ColorToggle/ColorModeToggle';
 
 export function Footer() {
   return (
     <footer className={classes.footer}>
-        <Flex justify="flex-end" gap="md">
-          <ColorMode />
-          <Space w={5} />
-        </Flex>
+      <Container size="md">
+        <Center>
+          <Text size="sm" c="dimmed">
+            &copy; {new Date().getFullYear()} 🛠️ Jared Kirby. All rights reserved.
+          </Text>
+        </Center>
+      </Container>
     </footer>
   );
 }

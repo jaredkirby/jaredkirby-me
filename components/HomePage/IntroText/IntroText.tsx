@@ -1,4 +1,5 @@
 import { Text, Center, Space } from '@mantine/core';
+import classes from './IntroText.module.css';
 
 export function IntroText() {
   const yellowColor = '#E7E792';
@@ -11,15 +12,14 @@ export function IntroText() {
   return (
     <>
       <Center>
-        <Text size="xl" fw={700}>
+        <Text size='xl' fw={700}>
           About Me
         </Text>
       </Center>
-      <Space h="lg" />
-      <Text size="md">
+      <Space h="sm" />
+      <Text className={classes.text}>
         <strong>Role:</strong> I'm the{' '}
-        <span style={{ fontWeight: 700, color: yellowColor }}>Director of Innovation</span> at a
-        California-based media and marketing agency, developing the future for CPG brands.
+        <span style={{ fontWeight: 700, color: yellowColor }}>Director of Innovation</span> at CEMM, developing the future for CPG brands.
       </Text>
       <Space h="sm" />
       <Text size="md">
@@ -30,15 +30,14 @@ export function IntroText() {
       </Text>
       <Space h="sm" />
       <Text size="md">
-        <strong>Interests:</strong> Focused on{' '}
-        <span style={{ fontWeight: 700, color: redColor }}>AI Engineering</span>,{' '}
-        <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span>, and{' '}
-        <span style={{ fontWeight: 700, color: purpleColor }}>Retrieval Augmented Generation</span>.
+        <strong>Focused on:</strong> <br />
+        🛠️ - <span style={{ fontWeight: 700, color: redColor }}>AI Engineering</span> <br />
+        📣 - <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
+        🧠 - <span style={{ fontWeight: 700, color: purpleColor }}>Long-Term Memory Models</span> <br />
       </Text>
       <Space h="sm" />
       <Text size="md">
-        <strong>Hobbies:</strong> Off-duty, I'm restoring my '78 Fiat, building Lego with my boys, or enjoying
-        sports like F1 and baseball.
+        <strong>Hobbies:</strong> Off-duty, I'm restoring my '78 Fiat, building Lego with my boys, or enjoying F1 and baseball.
       </Text>
       <Space h="lg" />
       <Center>

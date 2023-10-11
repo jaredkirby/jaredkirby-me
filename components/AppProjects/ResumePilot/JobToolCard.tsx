@@ -6,13 +6,11 @@ import {
   Text,
   Button,
   Textarea,
-  Stack,
   Tooltip,
   rem,
   Container,
   Center,
   Space,
-  Flex,
 } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { ResumeUpload } from '../FileInput/ResumeUpload';
@@ -36,7 +34,7 @@ function JobDescription() {
       radius="md"
       rightSection={rightSection}
       autosize={true}
-      minRows={4}
+      minRows={5}
       label="Job Description"
       placeholder={`Job Title: AI Engineer\nJob Description: We are looking for a AI Engineer to join our team. You will be responsible for building and deploying AI applications that utilize foundation or local models via API.`}
     />
@@ -60,19 +58,22 @@ export function JobToolCard() {
           <Card.Section>
             <Image src="/JobPilotHero.png" alt="JobPilot" height={110} />
           </Card.Section>
-          <Text mt={9} size="xl" fw={700}>
-            JobPilot
-          </Text>
-          <Text size="sm" c="dimmed">
-            Upload your resume and job description to get started.
-          </Text>
+          <Container px={0}>
+            <Text mt={9} size="xl" fw={700}>
+              JobPilot
+            </Text>
+            <Text size="sm" c="dimmed">
+              Upload your resume and job description to get started.
+            </Text>
+          </Container>
           <Space h="md" />
-            <ResumeUpload />
-            <JobDescription />
-            <Space h="md" />
-            <Button variant="filled" color="rgba(59, 168, 94, 0.5)" radius="md">
-              Generate Resume
-            </Button>
+          <ResumeUpload />
+          <Space h="sm" />
+          <JobDescription />
+          <Space h="md" />
+          <Button variant="filled" color="rgba(59, 168, 94, 0.5)" radius="md">
+            Generate Resume
+          </Button>
         </Card>
       </Center>
     </Container>

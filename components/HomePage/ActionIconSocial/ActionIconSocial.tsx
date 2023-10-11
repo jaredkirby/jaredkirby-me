@@ -7,6 +7,7 @@ import {
   IconBrandYoutube,
   IconMail,
   IconBrandX,
+  IconBrandTwitter
 } from '@tabler/icons-react';
 import classes from './ActionIcon.module.css';
 
@@ -26,7 +27,7 @@ export function ActionIconSocial() {
     },
     {
       url: 'https://twitter.com/Kirby_',
-      icon: <IconBrandX className={`${classes.icon} ${classes.dark}`} stroke={1.5} />,
+      icon: <IconBrandTwitter className={`${classes.icon} ${classes.dark}`} stroke={1.5} />,
     },
     {
       url: 'mailto:JPeterKirby@gmail.com',
