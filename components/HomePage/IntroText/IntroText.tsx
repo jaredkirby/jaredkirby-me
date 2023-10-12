@@ -31,9 +31,15 @@ export function IntroText() {
       <Space h="sm" />
       <Text size="md">
         <strong>Focused on:</strong> <br />
-        🛠️ - <span style={{ fontWeight: 700, color: redColor }}>AI Engineering</span> <br />
+        🛠️ - <span style={{ fontWeight: 700, color: redColor }}>AI Engineering/Operations</span> <br />
         📣 - <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
-        🧠 - <span style={{ fontWeight: 700, color: purpleColor }}>Long-Term Memory Models</span> <br />
+      </Text>
+      <Space h="sm" />
+      <Text size="md">
+        <strong>Projects:</strong> <br />
+        - Applied Image to Text: Shelf Analysis <br />
+        - Applied Audio to Text: AI-Accelerated Learning <br />
+        - Long Term Memory Models: Elderly Care/Companion <br />
       </Text>
       <Space h="sm" />
       <Text size="md">
