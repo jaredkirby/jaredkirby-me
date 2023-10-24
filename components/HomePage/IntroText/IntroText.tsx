@@ -37,8 +37,8 @@ export function IntroText() {
       <Space h="sm" />
       <Text size="md">
         <strong>Projects:</strong> <br />
-        - Applied Image to Text: Shelf Analysis <br />
-        - Applied Audio to Text: AI-Accelerated Learning <br />
+        - Applied Image to Text: CPG Shelf Analysis <br />
+        - Applied Speech to Text: AI-Accelerated Learning <br />
         - Long Term Memory Models: Elderly Care/Companion <br />
       </Text>
       <Space h="sm" />
