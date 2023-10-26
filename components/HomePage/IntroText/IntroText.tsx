@@ -23,29 +23,26 @@ export function IntroText() {
       </Text>
       <Space h="sm" />
       <Text size="md">
-        <strong>Skills:</strong> Programming, data analytics, business operations, and marketing strategy.
-        Passionate about{' '}
+        <strong>Skills:</strong> <br />
         <span style={{ fontWeight: 700, color: pinkColor }}>learning new things </span> and
         <span style={{ fontWeight: 700, color: purpleColor }}> building</span>.
       </Text>
       <Space h="sm" />
       <Text size="md">
         <strong>Focused on:</strong> <br />
-        🛠️ - <span style={{ fontWeight: 700, color: redColor }}>AI Engineering/Operations</span> <br />
-        📣 - <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
+      <Center>
+        🛠️<span style={{ fontWeight: 700, color: redColor }}>AI Engineering/Operations</span> <br />
+        📣<span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
+      </Center>
       </Text>
       <Space h="sm" />
       <Text size="md">
         <strong>Projects:</strong> <br />
-        - Applied Image to Text: Shelf Analysis <br />
-        - Applied Audio to Text: AI-Accelerated Learning <br />
-        - Long Term Memory Models: Elderly Care/Companion <br />
+        - <span style={{ fontWeight: 700, color: redColor }}>Image to Text: Store Shelf Analysis</span> <br />
+        - <span style={{ fontWeight: 700, color: redColor }}>Speech to Text: AI-Accelerated Learning</span> <br />
+        - <span style={{ fontWeight: 700, color: redColor }}>Memory Models: Elderly Care/Companion</span> <br />
       </Text>
       <Space h="sm" />
-      <Text size="md">
-        <strong>Hobbies:</strong> Off-duty, I'm restoring my '78 Fiat, building Lego with my boys, or enjoying F1 and baseball.
-      </Text>
-      <Space h="lg" />
       <Center>
         <Text size="md">
           <span style={{ fontWeight: 700, color: blueColor }}>Let's Connect! </span>👋
