@@ -36,9 +36,9 @@ export function IntroText() {
       <Space h="sm" />
       <Text size="md">
         <strong>Projects:</strong> <br />
-        - <span style={{ fontWeight: 700, color: redColor }}>Image to Text: Store Shelf Analysis</span> <br />
-        - <span style={{ fontWeight: 700, color: redColor }}>Speech to Text: AI-Accelerated Learning</span> <br />
-        - <span style={{ fontWeight: 700, color: redColor }}>Memory Models: Elderly Care/Companion</span> <br />
+        - Image to Text:<span style={{ fontWeight: 700, color: purpleColor }}> Store Shelf Analysis</span> <br />
+        - Speech to Text:<span style={{ fontWeight: 700, color: blueColor }}> AI-Accelerated Learning</span> <br />
+        - Memory Models:<span style={{ fontWeight: 700, color: pinkColor }}> Elderly Care/Companion</span> <br />
       </Text>
       <Space h="sm" />
       <Center>

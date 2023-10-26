@@ -3,7 +3,7 @@ import { Card, Tabs, rem, Container } from '@mantine/core';
 import { DocQACard } from './pdfPilot/DocQACard';
 import { DOSToolCard } from './RolePilot/DOSToolCard';
 import { JobToolCard } from './ResumePilot/JobToolCard';
-import { IconBriefcase, IconFileSearch, IconUserCheck } from '@tabler/icons-react';
+import { IconBriefcase, IconFileSearch, IconUserCheck, IconAlarmSnooze } from '@tabler/icons-react';
 import classes from './MainProjectCard.module.css';
 import { SleepyPandaApp } from './SleepyPanda/HomeApp/HomeApp';
 
@@ -15,7 +15,7 @@ export function MainProjectCard() {
       <Card shadow="md" padding="md" radius="lg" className={classes.card}>
         <Tabs color="teal" defaultValue="SleepyPanda">
           <Tabs.List grow>
-            <Tabs.Tab value="SleepyPanda" leftSection={<IconBriefcase style={iconStyle} />}>
+            <Tabs.Tab value="SleepyPanda" leftSection={<IconAlarmSnooze style={iconStyle} />}>
               SleepyPanda
             </Tabs.Tab>
             <Tabs.Tab value="JobPilot" leftSection={<IconBriefcase style={iconStyle} />}>
