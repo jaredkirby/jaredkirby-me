@@ -30,10 +30,8 @@ export function IntroText() {
       <Space h="sm" />
       <Text size="md">
         <strong>Focused on:</strong> <br />
-      <Center>
-        🛠️<span style={{ fontWeight: 700, color: redColor }}>AI Engineering/Operations</span> <br />
-        📣<span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
-      </Center>
+        🛠️ - <span style={{ fontWeight: 700, color: redColor }}>AI Engineering/Operations</span> <br />
+        📣 - <span style={{ fontWeight: 700, color: greenColor }}>Marketing Intelligence</span> <br />
       </Text>
       <Space h="sm" />
       <Text size="md">

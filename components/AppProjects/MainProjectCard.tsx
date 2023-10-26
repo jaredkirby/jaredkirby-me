@@ -5,7 +5,7 @@ import { DOSToolCard } from './RolePilot/DOSToolCard';
 import { JobToolCard } from './ResumePilot/JobToolCard';
 import { IconBriefcase, IconFileSearch, IconUserCheck } from '@tabler/icons-react';
 import classes from './MainProjectCard.module.css';
-import { SleepyPandaApp } from '../apps/SleepyPandaComponents/HomeApp/HomeApp';
+import { SleepyPandaApp } from './SleepyPanda/HomeApp/HomeApp';
 
 export function MainProjectCard() {
   const iconStyle = { width: rem(15), height: rem(15) };
