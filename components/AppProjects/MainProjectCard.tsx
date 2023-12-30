@@ -14,7 +14,7 @@ export function MainProjectCard() {
     <Container size="md">
       <Card shadow="md" padding="md" radius="lg" className={classes.card}>
         <Tabs color="teal" defaultValue="SleepyPanda">
-          <Tabs.List grow>
+          <Tabs.List grow justify="center">
             <Tabs.Tab value="SleepyPanda" leftSection={<IconAlarmSnooze style={iconStyle} />}>
               SleepyPanda
             </Tabs.Tab>
