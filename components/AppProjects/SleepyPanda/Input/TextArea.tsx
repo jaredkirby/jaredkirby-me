@@ -37,7 +37,7 @@ export function PeerReviewApp() {
   const [topic, setTopic] = useState<string>('');
   const [voice, setTone] = useState<string>('');
   const [prompt, setMessage] = useState<string>('');
-  const [additionalNotes, setAdditionalNotes] = useState('');
+  const [notes, setAdditionalNotes] = useState('');
   const [isSending, setIsSending] = useState<boolean>(false);
   const [responseContent, setResponseContent] = useState<string>('');
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
@@ -58,6 +58,7 @@ export function PeerReviewApp() {
           topic,
           prompt,
           voice,
+          notes,
         };
         ws.send(JSON.stringify(requestData));
       } catch (error) {
@@ -153,7 +154,7 @@ export function PeerReviewApp() {
             minRows={1}
             maxRows={20}
             placeholder="Optional*"
-            value={additionalNotes}
+            value={notes}
             onChange={(e) => setAdditionalNotes(e.currentTarget.value)}
           />
         </Grid.Col>
