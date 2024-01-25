@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import {
   Textarea,
   TextInput,
@@ -8,10 +7,9 @@ import {
   Button,
   Card,
   Text,
-  Switch,
+  Paper,
   ActionIcon,
   rem,
-  Space,
   Group,
   Tooltip,
 } from '@mantine/core';
@@ -23,64 +21,87 @@ import {
   IconCheck,
 } from '@tabler/icons-react';
 
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { apiBaseUrl } from './utils/constants';
+import { useScrollIntoView } from '@mantine/hooks';
+import ReactMarkdown from 'react-markdown';
+
 export function PeerReviewApp() {
   // State for API error
   const [apiError, setApiError] = useState<string | null>(null);
 
   // States for form fields
-  const [topic, setTopic] = useState('');
-  const [tone, setTone] = useState('');
-  const [message, setMessage] = useState('');
+  const [ws, setWs] = useState<WebSocket | null>(null);
+  const [streamedResponse, setStreamedResponse] = useState<string>('');
+  const [topic, setTopic] = useState<string>('');
+  const [voice, setTone] = useState<string>('');
+  const [prompt, setMessage] = useState<string>('');
   const [additionalNotes, setAdditionalNotes] = useState('');
-  const [isSending, setIsSending] = useState(false);
-  const [responseContent, setResponseContent] = useState('');
-  const [requestChanges, setRequestChanges] = useState('');
-  const [useGpt4, setUseGpt4] = useState(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [responseContent, setResponseContent] = useState<string>('');
+  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+    offset: 10,
+    cancelable: true,
+    isList: true,
+  });
+  const [firstChunkReceived, setFirstChunkReceived] = useState(false);
 
   // Icons
   const checkIcon = <IconCheck style={{ width: rem(20), height: rem(20) }} />;
 
   const sendPeerReviewRequest = async () => {
-    setIsSending(true);
-
-    // Initialize WebSocket connection
-    const ws = new WebSocket('ws://api-tools-production.up.railway.app/api/tool_peer_review/peer-execute');
-
-    // When the connection is open, send initial data
-    ws.onopen = () => {
-      const initialData = {
-        topic,
-        prompt: message,
-        instruct: "Requested changes to previous attempt: " + (requestChanges || additionalNotes),
-        voice: tone,
-        model: useGpt4 ? "gpt-4" : "",
-        chat_history: responseContent ? "Here is your previous attempt: " + responseContent : ""
-      };
-      ws.send(JSON.stringify(initialData));
-    };
-
-    // Listen for messages from the server
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      setResponseContent((prevContent) => prevContent + data.result);
-    };
-  
-    // Handle any errors that occur
-    ws.onerror = (error) => {
-      console.error("WebSocket Error:", error);
-      setIsSending(false);
-    };
-  
-    // Handle any errors that occur
-    ws.onerror = (error) => {
-      console.error("WebSocket Error:", error);
-      setIsSending(false);
-    };
-
+    if (ws) {
+      setIsSending(true);
+      try {
+        const requestData = {
+          topic,
+          prompt,
+          voice,
+        };
+        ws.send(JSON.stringify(requestData));
+      } catch (error) {
+        console.error('Error processing image:', error);
+        setApiError('Failed to process image.');
+      }
+    }
   };
 
+  const connectWebSocket = () => {
+    const websocket = new WebSocket(apiBaseUrl + '/sleepy-panda-ws');
+
+    websocket.onmessage = (event) => {
+      setStreamedResponse((prev) => {
+        // Concatenate new streamed data
+        const updatedResponse = prev + event.data;
+
+        // Update responseContent with the updated response
+        setResponseContent(updatedResponse);
+
+        if (!firstChunkReceived) {
+          setFirstChunkReceived(true);
+          setIsSending(false);
+          scrollIntoView({ alignment: 'center' });
+        }
+
+        return updatedResponse;
+      });
+    };
+
+    setWs(websocket);
+  };
+
+  useEffect(() => {
+    connectWebSocket();
+    return () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+  }, []);
+
   return (
-    <Card shadow="md" padding="xl" radius="lg">
+    <Card mb='lg' shadow="sm" padding="xl" radius="lg">
       <Grid justify="center" align="flex-start">
         <Grid.Col span={6}>
           <TextInput
@@ -102,7 +123,7 @@ export function PeerReviewApp() {
             size="lg"
             radius="lg"
             placeholder="Casual"
-            value={tone}
+            value={voice}
             onChange={(e) => setTone(e.currentTarget.value)}
           />
         </Grid.Col>
@@ -117,7 +138,7 @@ export function PeerReviewApp() {
             minRows={4}
             maxRows={20}
             placeholder={`"YouTube video writer and editor for a DIY Entrepreneurs focused channel."`}
-            value={message}
+            value={prompt}
             onChange={(e) => setMessage(e.currentTarget.value)}
           />
         </Grid.Col>
@@ -134,16 +155,6 @@ export function PeerReviewApp() {
             placeholder="Optional*"
             value={additionalNotes}
             onChange={(e) => setAdditionalNotes(e.currentTarget.value)}
-          />
-        </Grid.Col>
-        <Grid.Col span={12}>
-          <Switch
-            label="Use GPT-4"
-            description="Slower but more accurate. Better for technical/medical writing."
-            color="teal"
-            ml={5}
-            checked={useGpt4}
-            onChange={(e) => setUseGpt4(e.currentTarget.checked)}
           />
         </Grid.Col>
         <Grid.Col>
@@ -164,11 +175,10 @@ export function PeerReviewApp() {
       </Grid>
 
       {/* Response */}
-
-      {responseContent && (
-        <Card shadow="md" padding="lg" radius="lg">
-          <Card shadow="sm" padding="xl" radius="lg">
-            <Group mb="md" justify="space-between" align="flex-end">
+      <div ref={targetRef} id="response-content">
+        {streamedResponse && (
+          <div>
+            <Group mt={50} justify="space-between" align="flex-end">
               <Text fw={500} size="xl">
                 Response:
               </Text>
@@ -190,7 +200,7 @@ export function PeerReviewApp() {
                     variant="light"
                     radius="md"
                     onClick={() => {
-                      navigator.clipboard.writeText(responseContent);
+                      navigator.clipboard.writeText(streamedResponse);
                     }}
                   >
                     <IconCopy style={{ width: '70%', height: '70%' }} stroke={1.2} />
@@ -198,41 +208,10 @@ export function PeerReviewApp() {
                 </Tooltip>
               </ActionIcon.Group>
             </Group>
-            <div>
-              {responseContent.split('\n').map((line, index, array) => (
-                <>
-                  {line}
-                  {index === array.length - 1 ? null : <br />}
-                </>
-              ))}
-            </div>
-          </Card>
-          <Space h="lg" />
-          <Textarea
-            rightSectionWidth={50}
-            rightSection={
-              <ActionIcon
-                size={32}
-                radius="lg"
-                color="teal"
-                variant="filled"
-                onClick={sendPeerReviewRequest}
-              >
-                <IconArrowRight style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-              </ActionIcon>
-            }
-            label="Request Changes"
-            description="If you would like changes made, please provide your request below."
-            variant="filled"
-            size="lg"
-            radius="lg"
-            autosize
-            placeholder={'"Please add a comment about the importance of sleep."'}
-            value={requestChanges}
-            onChange={(e) => setRequestChanges(e.currentTarget.value)}
-          />
-        </Card>
-      )}
+            {streamedResponse && <ReactMarkdown>{streamedResponse}</ReactMarkdown>}
+          </div>
+          )}
+      </div>
     </Card>
   );
 }

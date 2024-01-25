@@ -18,7 +18,8 @@ export function IntroText() {
       </Center>
       <Space h="sm" />
       <Text className={classes.text}>
-        <strong>Role:</strong> I'm the{' '}
+        <strong>Role:</strong> <br />
+        I'm the{' '}
         <span style={{ fontWeight: 700, color: yellowColor }}>Director of Innovation</span> at CEMM, developing the future for CPG brands.
       </Text>
       <Space h="sm" />
