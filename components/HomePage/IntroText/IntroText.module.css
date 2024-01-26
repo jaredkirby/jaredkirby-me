@@ -5,3 +5,33 @@
   font-weight: 900;
   text-align: center;
 }
+
+.yellow {
+  color: light-dark(var(--mantine-color-yellow), var('#E7E792'));
+  font-weight: 700;
+}
+
+.red {
+  color: light-dark(var(--mantine-color-red), var('#B5716E'));
+  font-weight: 700;
+}
+
+.green {
+  color: light-dark(var(--mantine-color-green), var('#A4DA95'));
+  font-weight: 700;
+}
+
+.blue {
+  color: light-dark(var(--mantine-color-blue), var('#9ACFE5'));
+  font-weight: 700;
+}
+
+.purple {
+  color: light-dark(var(--mantine-color-purple), var('#8677D3'));
+  font-weight: 700;
+}
+
+.pink {
+  color: light-dark(var(--mantine-color-pink), var('#C266AF'));
+  font-weight: 700;
+}

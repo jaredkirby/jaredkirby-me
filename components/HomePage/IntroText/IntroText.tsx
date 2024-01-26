@@ -2,10 +2,10 @@ import { Text, Center, Space } from '@mantine/core';
 import classes from './IntroText.module.css';
 
 export function IntroText() {
-  const yellowColor = '#E7E792';
+  const yellowColor = '#CCCB37';
   const redColor = '#B5716E';
-  const greenColor = '#A4DA95';
-  const blueColor = '#9ACFE5';
+  const greenColor = '#7EC16B';
+  const blueColor = '#69B1CE';
   const purpleColor = '#8677D3';
   const pinkColor = '#C266AF';
 
@@ -17,7 +17,7 @@ export function IntroText() {
         </Text>
       </Center>
       <Space h="sm" />
-      <Text className={classes.text}>
+      <Text>
         <strong>Role:</strong> <br />
         I'm the{' '}
         <span style={{ fontWeight: 700, color: yellowColor }}>Director of Innovation</span> at CEMM, developing the future for CPG brands.
@@ -38,13 +38,13 @@ export function IntroText() {
       <Text size="md">
         <strong>Projects:</strong> <br />
         - Image to Text:<span style={{ fontWeight: 700, color: purpleColor }}> Store Shelf Analysis</span> <br />
-        - Speech to Text:<span style={{ fontWeight: 700, color: blueColor }}> AI-Accelerated Learning</span> <br />
+        - Speech to Text:<span style={{ fontWeight: 700, color: blueColor }}> Accelerated Learning</span> <br />
         - Memory Models:<span style={{ fontWeight: 700, color: pinkColor }}> Elderly Care/Companion</span> <br />
       </Text>
       <Space h="sm" />
       <Center>
         <Text size="md">
-          <span style={{ fontWeight: 700, color: blueColor }}>Let's Connect! </span>👋
+          <span style={{ fontWeight: 700, color: greenColor }}>Let's Connect! </span>👋
         </Text>
       </Center>
     </>
