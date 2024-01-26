@@ -16,7 +16,7 @@ export function JaredGrid() {
               Hi, I'm Jared! 😄
             </Text>
             <Text ta="center" mt={-10} size="md" fw={500}>
-                Husband, Dad, Data Nerd, <br />
+                Dad, Husband, Data Nerd, <br />
                 and AI Enthusiast
             </Text>
             <ActionIconSocial />
